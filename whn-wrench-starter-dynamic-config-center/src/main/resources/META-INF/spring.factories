@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=cn.web3er.wrench.dynamic.config.center.config.DynamicConfigCenterRegisterAutoConfig,cn.web3er.wrench.dynamic.config.center.config.DynamicConfigCenterAutoConfig
