@@ -1,10 +1,14 @@
 package cn.web3er.wrench.trigger;
 
 import cn.web3er.wrench.rate.limiter.enums.LimitType;
+import cn.web3er.wrench.rate.limiter.types.ServletUtils;
 import cn.web3er.wrench.rate.limiter.types.annotations.RateLimiter;
 import cn.web3er.wrench.rate.limiter.types.annotations.RateLimiterAccessInterceptor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
 
 @Slf4j
 @RestController()
@@ -12,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/index/")
 public class IndexController {
 
+    @Value("${whn.wrench.config.cdn:false}")
+    private boolean useCdn;
     /**
      * curl --request GET \
      *   --url 'http://127.0.0.1:9191/api/v1/index/draw?userId=hhh'
@@ -62,6 +68,12 @@ public class IndexController {
         return value;
     }
 
+    @GetMapping("/getClientIP")
+    public String getClientIP() {
+        String clientIP = ServletUtils.getClientIP(useCdn);
+        LocalDateTime now1 = LocalDateTime.now();
+        return now1.toString() +" __ "+ clientIP +" __ "+useCdn;
+    }
     public String drawErrorRateLimiter(String userId) {
         System.out.println("限流了 this is " + userId);
         return "rateLimiter";

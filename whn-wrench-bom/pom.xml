@@ -6,7 +6,7 @@
     <parent>
         <groupId>cn.web3er.wrench</groupId>
         <artifactId>whn-wrench</artifactId>
-        <version>1.6</version>
+        <version>1.8</version>
     </parent>
 
     <artifactId>whn-wrench-bom</artifactId>
@@ -59,17 +59,17 @@
             <dependency>
                 <groupId>cn.web3er.wrench</groupId>
                 <artifactId>whn-wrench-starter-design-framework</artifactId>
-                <version>1.6</version>
+                <version>1.8</version>
             </dependency>
             <dependency>
                 <groupId>cn.web3er.wrench</groupId>
                 <artifactId>whn-wrench-starter-dynamic-config-center</artifactId>
-                <version>1.6</version>
+                <version>1.8</version>
             </dependency>
             <dependency>
                 <groupId>cn.web3er.wrench</groupId>
                 <artifactId>whn-wrench-starter-rate-limiter</artifactId>
-                <version>1.6</version>
+                <version>1.8</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

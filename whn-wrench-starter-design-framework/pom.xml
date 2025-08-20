@@ -6,12 +6,12 @@
     <parent>
         <groupId>cn.web3er.wrench</groupId>
         <artifactId>whn-wrench</artifactId>
-        <version>1.6</version>
+        <version>1.8</version>
     </parent>
 
     <artifactId>whn-wrench-starter-design-framework</artifactId>
-    <name>xfg-wrench-starter-design-framework</name>
-    <description>xfg wrench modules design framework</description>
+    <name>whn-wrench-starter-design-framework</name>
+    <description>whn wrench modules design framework</description>
     <url>https://github.com/nb-sb/whn-wrench</url>
 
     <licenses>

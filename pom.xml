@@ -6,14 +6,14 @@
 
     <groupId>cn.web3er.wrench</groupId>
     <artifactId>whn-wrench</artifactId>
-    <version>1.6</version>
+    <version>1.8</version>
     <packaging>pom</packaging>
     <modules>
         <module>whn-wrench-starter-dynamic-config-center</module>
-        <module>whn-wrench-test</module>
         <module>whn-wrench-starter-design-framework</module>
         <module>whn-wrench-bom</module>
         <module>whn-wrench-starter-rate-limiter</module>
+        <module>whn-wrench-test</module>
     </modules>
 
     <properties>

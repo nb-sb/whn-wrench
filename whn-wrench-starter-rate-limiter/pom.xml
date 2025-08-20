@@ -6,7 +6,7 @@
     <parent>
         <groupId>cn.web3er.wrench</groupId>
         <artifactId>whn-wrench</artifactId>
-        <version>1.6</version>
+        <version>1.8</version>
     </parent>
 
     <artifactId>whn-wrench-starter-rate-limiter</artifactId>
@@ -119,7 +119,7 @@
         <dependency>
             <groupId>cn.web3er.wrench</groupId>
             <artifactId>whn-wrench-starter-dynamic-config-center</artifactId>
-            <version>1.6</version>
+            <version>1.8</version>
             <scope>provided</scope>
         </dependency>
 

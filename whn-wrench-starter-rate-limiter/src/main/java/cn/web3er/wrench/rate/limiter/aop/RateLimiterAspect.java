@@ -55,7 +55,7 @@ public class RateLimiterAspect {
      */
     private final ParameterNameDiscoverer pnd = new DefaultParameterNameDiscoverer();
 
-    @Value("${whn.wrench.config.cdn}")
+    @Value("${whn.wrench.config.cdn:false}")
     private boolean useCdn;
 
     @Before("@annotation(rateLimiter)")

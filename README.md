@@ -21,7 +21,7 @@ WHN Wrench 是一个功能丰富的Java工具集，提供了多种可复用的�
 <dependency>
     <groupId>cn.web3er.wrench</groupId>
     <artifactId>whn-wrench-bom</artifactId>
-    <version>1.6</version>
+    <version>{最新版本号}</version>
     <type>pom</type>
     <scope>import</scope>
 </dependency>

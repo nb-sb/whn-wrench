@@ -10,7 +10,7 @@ public class DynamicConfigCenterAutoProperties {
     /**
      * 系统名称
      */
-    private String system;
+    private String system = "whn-wrench-ddc";
 
     public String getKey(String attributeName) {
         return this.system + Constants.LINE + attributeName;

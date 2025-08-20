@@ -19,8 +19,8 @@ whn:
       system: test-system
       register:
         # redis host
-        host: 127.0.0.1
+        host: 117.72.162.115
         # redis port
         port: 6379
-        password: 123456
-      cdn: false
+        password: 123999
+      cdn: true
