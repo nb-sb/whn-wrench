@@ -19,10 +19,10 @@ public class DynamicConfigCenterAdjustListener implements MessageListener<Attrib
     @Override
     public void onMessage(CharSequence charSequence, AttributeVO attributeVO) {
         try {
-            log.info("xfg-wrench dcc config attribute:{} value:{}", attributeVO.getAttribute(), attributeVO.getValue());
+            log.info("whn-wrench dcc config attribute:{} value:{}", attributeVO.getAttribute(), attributeVO.getValue());
             dynamicConfigCenterService.adjustAttributeValue(attributeVO);
         } catch (Exception e) {
-            log.error("xfg-wrench dcc config attribute:{} value:{}", attributeVO.getAttribute(), attributeVO.getValue(), e);
+            log.error("whn-wrench dcc config attribute:{} value:{}", attributeVO.getAttribute(), attributeVO.getValue(), e);
         }
     }
 

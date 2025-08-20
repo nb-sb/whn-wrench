@@ -6,7 +6,7 @@
     <parent>
         <groupId>cn.web3er.wrench</groupId>
         <artifactId>whn-wrench</artifactId>
-        <version>1.3</version>
+        <version>1.6</version>
     </parent>
 
     <artifactId>whn-wrench-test</artifactId>
@@ -17,6 +17,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <packaging>jar</packaging>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.web3er.wrench</groupId>
+                <artifactId>whn-wrench-bom</artifactId>
+                <version>1.6</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -43,6 +54,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.38</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -58,35 +70,16 @@
         <dependency>
             <groupId>cn.web3er.wrench</groupId>
             <artifactId>whn-wrench-starter-dynamic-config-center</artifactId>
-            <version>1.3</version>
+            <version>1.6</version>
         </dependency>
         <dependency>
             <groupId>cn.web3er.wrench</groupId>
             <artifactId>whn-wrench-starter-design-framework</artifactId>
-            <version>1.3</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>cn.bugstack.wrench</groupId>-->
-<!--            <artifactId>xfg-wrench-starter-dynamic-config-center</artifactId>-->
-<!--            <version>3.0.2</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>cn.bugstack.wrench</groupId>-->
-<!--            <artifactId>xfg-wrench-starter-design-framework</artifactId>-->
-<!--            <version>3.0.2</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>cn.bugstack.wrench</groupId>-->
-<!--            <artifactId>xfg-wrench-starter-rate-limiter</artifactId>-->
-<!--            <version>3.0.2</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>cn.bugstack.wrench</groupId>-->
-<!--            <artifactId>xfg-wrench-starter-rate-limiter</artifactId>-->
-<!--            <version>3.0.2</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>cn.web3er.wrench</groupId>
+            <artifactId>whn-wrench-starter-rate-limiter</artifactId>
+        </dependency>
 
     </dependencies>
 

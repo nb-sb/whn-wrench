@@ -127,7 +127,7 @@ public class DynamicConfigCenterService implements IDynamicConfigCenterService {
             field.set(objBean, value);
             field.setAccessible(false);
 
-            log.info("DCC 节点监听，动态设置值 {} {}", key, value);
+            log.info("whn-wrench DCC 节点监听，动态设置值 {} {}", key, value);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
