@@ -50,6 +50,17 @@ public class IndexController {
     public String test4(@PathVariable("userId") String userId) {
         return "success: " + userId;
     }
+    /**
+     * 测试请求IP限流(key基于参数获取)
+     * 同一IP请求受影响
+     *
+     * 简单变量获取 #变量 复杂表达式 #{#变量 != 1 ? 1 : 0}
+     */
+    @RateLimiter(count = 2, time = 10, limitType = LimitType.IP, key = "#value")
+    @GetMapping("/testObj")
+    public String testObj(String value) {
+        return value;
+    }
 
     public String drawErrorRateLimiter(String userId) {
         System.out.println("限流了 this is " + userId);
