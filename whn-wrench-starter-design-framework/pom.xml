@@ -6,7 +6,7 @@
     <parent>
         <groupId>cn.web3er.wrench</groupId>
         <artifactId>whn-wrench</artifactId>
-        <version>1.8</version>
+        <version>1.9</version>
     </parent>
 
     <artifactId>whn-wrench-starter-design-framework</artifactId>
@@ -55,10 +55,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

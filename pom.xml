@@ -6,7 +6,7 @@
 
     <groupId>cn.web3er.wrench</groupId>
     <artifactId>whn-wrench</artifactId>
-    <version>1.8</version>
+    <version>1.9</version>
     <packaging>pom</packaging>
     <modules>
         <module>whn-wrench-starter-dynamic-config-center</module>

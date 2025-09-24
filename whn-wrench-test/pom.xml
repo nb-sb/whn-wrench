@@ -6,7 +6,7 @@
     <parent>
         <groupId>cn.web3er.wrench</groupId>
         <artifactId>whn-wrench</artifactId>
-        <version>1.8</version>
+        <version>1.9</version>
     </parent>
 
     <artifactId>whn-wrench-test</artifactId>
@@ -23,7 +23,7 @@
             <dependency>
                 <groupId>cn.web3er.wrench</groupId>
                 <artifactId>whn-wrench-bom</artifactId>
-                <version>1.8</version>
+                <version>1.9</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
