@@ -6,13 +6,16 @@
     <parent>
         <groupId>cn.web3er.wrench</groupId>
         <artifactId>whn-wrench</artifactId>
-        <version>1.9</version>
+        <version>2.0</version>
     </parent>
 
+    <groupId>cn.web3er.wrench</groupId>
     <artifactId>whn-wrench-starter-design-framework</artifactId>
+    <version>2.0</version>
     <name>whn-wrench-starter-design-framework</name>
     <description>whn wrench modules design framework</description>
     <url>https://github.com/nb-sb/whn-wrench</url>
+    <packaging>jar</packaging>
 
     <licenses>
         <license>
@@ -55,12 +58,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -152,7 +153,7 @@
                         <configuration>
                             <additionalparam>-Xdoclint:none</additionalparam>
                             <!--  /Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk/Contents/Home/bin/javadoc -->
-                            <javadocExecutable>${java.home}${file.separator}..${file.separator}bin${file.separator}javadoc</javadocExecutable>
+                            <javadocExecutable>/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/../bin/javadoc</javadocExecutable>
                         </configuration>
                     </execution>
                 </executions>
