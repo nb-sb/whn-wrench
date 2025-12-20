@@ -67,24 +67,25 @@
             <artifactId>commons-codec</artifactId>
         </dependency>
 
-        <!-- 动态配置中心 -->
-        <dependency>
-            <groupId>cn.web3er.wrench</groupId>
-            <artifactId>whn-wrench-starter-dynamic-config-center</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+<!--        &lt;!&ndash; 动态配置中心 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>cn.web3er.wrench</groupId>-->
+<!--            <artifactId>whn-wrench-starter-dynamic-config-center</artifactId>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.springframework.boot</groupId>-->
+<!--                    <artifactId>*</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.springframework</groupId>-->
+<!--                    <artifactId>*</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>cn.web3er.wrench</groupId>
             <artifactId>whn-wrench-starter-design-framework</artifactId>
+            <version>2.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
@@ -97,20 +98,20 @@
             </exclusions>
         </dependency>
 
-        <dependency>
-            <groupId>cn.web3er.wrench</groupId>
-            <artifactId>whn-wrench-starter-rate-limiter</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>cn.web3er.wrench</groupId>-->
+<!--            <artifactId>whn-wrench-starter-rate-limiter</artifactId>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.springframework.boot</groupId>-->
+<!--                    <artifactId>*</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.springframework</groupId>-->
+<!--                    <artifactId>*</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
 
     </dependencies>
 

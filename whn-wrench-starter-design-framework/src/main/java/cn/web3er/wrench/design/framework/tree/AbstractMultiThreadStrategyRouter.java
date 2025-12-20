@@ -37,10 +37,22 @@ public abstract class AbstractMultiThreadStrategyRouter<T, D, R> implements Stra
      */
     @Override
     public R apply(T requestParameter, D dynamicContext) throws Exception {
-        // 异步加载数据
-        multiThread(requestParameter, dynamicContext);
-        // 业务流程受理
-        return doApply(requestParameter, dynamicContext);
+        try {
+            //1.前置处理
+            R r = applyBefore(requestParameter, dynamicContext);
+            if (null != r) return r;
+            // 异步加载数据
+            multiThread(requestParameter, dynamicContext);
+            // 业务流程受理
+            R result = doApply(requestParameter, dynamicContext);
+
+            //3.后置处理
+            applyAfter(requestParameter, dynamicContext, result);
+            return result;
+        } catch (Exception e) {
+            applyAfterException(requestParameter, dynamicContext, e);
+            throw e;
+        }
     }
 
     /**
@@ -53,4 +65,15 @@ public abstract class AbstractMultiThreadStrategyRouter<T, D, R> implements Stra
      */
     protected abstract R doApply(T requestParameter, D dynamicContext) throws Exception;
 
+    protected R applyBefore(T requestParameter, D dynamicContext) {
+        return proceed(requestParameter, dynamicContext);
+    }
+
+    protected void applyAfter(T requestParameter, D dynamicContext, R r) {
+
+    }
+
+    protected void applyAfterException(T requestParameter, D dynamicContext, Exception e) {
+
+    }
 }

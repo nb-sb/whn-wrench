@@ -27,4 +27,7 @@ public interface StrategyHandler<T, D, R> {
     //默认策略处理器
     R apply(T requestParameter, D dynamicContext) throws Exception;
 
+    default R proceed(T requestParameter, D dynamicContext) {
+        return null;
+    }
 }

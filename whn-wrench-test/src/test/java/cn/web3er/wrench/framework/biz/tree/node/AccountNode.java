@@ -63,6 +63,14 @@ public class AccountNode extends AbstractXxxSupport {
         return router(requestParameter, dynamicContext);
     }
 
+    /**
+     * 根据账户状态和用户级别路由到不同的会员节点
+     * 路由规则：
+     * 1. 账户冻结 -> MemberLevel1Node
+     * 2. 授信拦截 -> MemberLevel1Node
+     * 3. 用户级别 level=1 -> MemberLevel1Node
+     * 4. 其他情况 -> MemberLevel2Node
+     */
     @Override
     public StrategyHandler<String, DefaultStrategyFactory.DynamicContext, String> get(String requestParameter, DefaultStrategyFactory.DynamicContext dynamicContext) throws Exception {
         String accountType01 = dynamicContext.getValue("accountType01");

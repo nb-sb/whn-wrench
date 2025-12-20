@@ -26,6 +26,22 @@ public interface ILogicHandler<T, D extends DynamicContext, R>  {
         return result;
     }
 
+    default R jump(T requestParameter, D dynamicContext, R result) {
+        dynamicContext.setJump(true);
+        dynamicContext.setProceed(true);
+        return result;
+    }
+
     R apply(T requestParameter, D dynamicContext) throws Exception;
 
+    default R applyBefore(T requestParameter, D dynamicContext) throws Exception {
+        dynamicContext.setJump(false);
+        return null;
+    }
+
+    default void applyAfter(T requestParameter, D dynamicContext, R result) throws Exception {
+    }
+
+    default void applyAfterException(T requestParameter, D dynamicContext, Exception e) throws Exception {
+    }
 }

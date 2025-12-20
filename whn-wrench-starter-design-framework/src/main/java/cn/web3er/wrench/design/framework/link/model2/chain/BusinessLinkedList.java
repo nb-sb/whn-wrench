@@ -17,17 +17,47 @@ public class BusinessLinkedList<T, D extends DynamicContext, R> extends LinkedLi
 
     @Override
     public R apply(T requestParameter, D dynamicContext) throws Exception {
+        // 边界检查：空链表直接返回 null
+        if (this.first == null) {
+            return null;
+        }
+
         Node<ILogicHandler<T, D, R>> current = this.first;
-        do {
+        while (current != null) {
             ILogicHandler<T, D, R> item = current.item;
-            R apply = item.apply(requestParameter, dynamicContext);
-            //返回null则是继续下一个链的执行，如果不为空则直接返回内容
-            if (null != apply) {
-                return apply;
+            if (item == null) {
+                current = current.next;
+                continue;
             }
 
-            current = current.next;
-        } while (null != current);
+            try {
+                // 1. 前置调用
+                R applyBefore = item.applyBefore(requestParameter, dynamicContext);
+                //判断是否放行当前节点（为proceed为true的时候放行不拦截）
+                if (!dynamicContext.isProceed()) {
+                    item.applyAfter(requestParameter, dynamicContext, applyBefore);
+                    return applyBefore;
+                }
+
+                // 2. 节点跳过
+                if (dynamicContext.isJump()) {
+                    current = current.next;
+                    continue;
+                }
+
+                // 3. 执行节点
+                R apply = item.apply(requestParameter, dynamicContext);
+                // proceed 为 true 时，也要调用 applyAfter，然后继续下一个节点
+                item.applyAfter(requestParameter, dynamicContext, apply);
+                if (!dynamicContext.isProceed()) {
+                    return apply;
+                }
+                current = current.next;
+            } catch (Exception e) {
+                item.applyAfterException(requestParameter, dynamicContext, e);
+                throw e;
+            }
+        }
 
         return null;
     }

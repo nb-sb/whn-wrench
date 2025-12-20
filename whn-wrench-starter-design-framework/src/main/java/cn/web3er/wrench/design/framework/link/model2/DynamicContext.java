@@ -12,8 +12,11 @@ public class DynamicContext {
 
     private boolean proceed;
 
+    private boolean jump;
+
     public DynamicContext() {
         this.proceed = true;
+        this.jump = false;
     }
 
     private Map<String, Object> dataObjects = new HashMap<>();
@@ -32,5 +35,13 @@ public class DynamicContext {
 
     public void setProceed(boolean proceed) {
         this.proceed = proceed;
+    }
+
+    public boolean isJump() {
+        return jump;
+    }
+
+    public void setJump(boolean jump) {
+        this.jump = jump;
     }
 }

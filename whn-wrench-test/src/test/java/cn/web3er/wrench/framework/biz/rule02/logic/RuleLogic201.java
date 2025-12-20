@@ -10,11 +10,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class RuleLogic201 implements ILogicHandler<String, Rule02TradeRuleFactory.DynamicContext, XxxResponse> {
 
+    /**
+     * 使用 next() 方法：设置 proceed = true，放行当前节点，继续执行下一个节点
+     */
     public XxxResponse apply(String requestParameter, Rule02TradeRuleFactory.DynamicContext dynamicContext) throws Exception{
 
         log.info("link model02 RuleLogic201");
 
         return next(requestParameter, dynamicContext);
     }
+
 
 }
